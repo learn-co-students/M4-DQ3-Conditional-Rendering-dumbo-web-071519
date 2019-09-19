@@ -1,7 +1,9 @@
 import React from 'react'
 
-const MenuBar = (props) => {
-
+const MenuBar = ({ handleSelected, selected }) => {
+  const handleClick = (event) => {
+    handleSelected(event.target.id)
+  }
   /*
 
   The 'a' tags below are the menu items. Think about the way a menu 
@@ -15,20 +17,28 @@ const MenuBar = (props) => {
 
   return (
     <div className="ui four item menu">
-      <a className="item active" id="profile">
-        <i className="user large icon" id="profile"/>
+      <a className={"item " + (selected === "profile" ? "active" : null)}
+        id="profile"
+        onClick={handleClick}>
+        <i className="user large icon" id="profile" />
       </a>
 
-      <a className="item" id="photo">
-        <i className="photo large icon" id="photo"/>
+      <a className={"item " + (selected === "photo" ? "active" : null)}
+        id="photo"
+        onClick={handleClick}>
+        <i className="photo large icon" id="photo" />
       </a>
 
-      <a className="item" id="cocktail">
-        <i className="cocktail large icon" id="cocktail"/>
+      <a className={"item " + (selected === "cocktail" ? "active" : null)}
+        id="cocktail"
+        onClick={handleClick}>
+        <i className="cocktail large icon" id="cocktail" />
       </a>
 
-      <a className="item" id="pokemon"> 
-        <i className=" themeisle large icon" id="pokemon"/>
+      <a className={"item " + (selected === "pokemon" ? "active" : null)}
+        id="pokemon"
+        onClick={handleClick}>
+        <i className=" themeisle large icon" id="cocktail" />
       </a>
     </div>
   )
