@@ -2,6 +2,7 @@ import React from 'react'
 
 const MenuBar = (props) => {
 
+ 
   /*
 
   The 'a' tags below are the menu items. Think about the way a menu 
@@ -12,9 +13,11 @@ const MenuBar = (props) => {
   this component be made aware of what is currently the active menu item?
 
   */
+ 
+
 
   return (
-    <div className="ui four item menu">
+    <div className="ui four item menu" onClick={props.handleState}>
       <a className="item active" id="profile">
         <i className="user large icon" id="profile"/>
       </a>
